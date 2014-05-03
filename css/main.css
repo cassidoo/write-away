@@ -1,0 +1,41 @@
+html
+{
+	overflow: hidden;
+}
+
+html, body
+{
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+}
+
+body
+{
+	overflow-y: scroll;
+	padding-bottom: 40px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 20px;
+	min-width: 800px;
+	width: 100%;
+}
+
+section
+{
+	max-width: 600px;
+	height: 100%;
+	margin: auto;
+}
+
+.normal
+{
+	background: #fafafa;
+	color: #111;
+}
+
+.inverse
+{
+	background-color: #111;
+	color: #fafafa;
+}
