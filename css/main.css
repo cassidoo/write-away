@@ -12,6 +12,7 @@ html, body
 
 body
 {
+	font-family: 'Droid Serif', 'Georgia', serif;
 	overflow-y: scroll;
 	padding-bottom: 40px;
 	padding-right: 10px;
