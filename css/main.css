@@ -29,6 +29,20 @@ section
 	margin: auto;
 }
 
+h1
+{
+	font-weight: bold;
+	font-size: 38px;
+}
+
+section :not(h1)
+{
+	padding-bottom: 50px;
+	line-height: 1.30em;
+	min-height: 90%;
+	font-size: 22px;
+}
+
 .normal
 {
 	background: #fafafa;

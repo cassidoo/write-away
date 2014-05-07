@@ -43,7 +43,7 @@ function supportsHtmlStorage()
     {
         return 'localStorage' in window && window['localStorage'] !== null;
     }
-    catch (e)
+    catch(e)
     {
         return false;
     }
