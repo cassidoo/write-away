@@ -60,12 +60,54 @@ function saveState()// Maybe also save to Dropbox?
 }
 
 /*
- Full Screen stuff... I should also learn how to do this.
+ Full Screen stuff
+ This is how it's called: enterFullScreen(document.documentElement); then later, exitFullScreen();
  */
 
-function enterFullScreen()
+function enterFullScreen(element)
 {
+    if(element.requestFullscreen)
+    {
+        element.requestFullscreen();
+    }
+    else if(element.mozRequestFullScreen)
+    {
+        element.mozRequestFullScreen();
+    }
+    else if(element.webkitRequestFullscreen)
+    {
+        element.webkitRequestFullscreen();
+    }
+    else if(element.msRequestFullscreen)
+    {
+        element.msRequestFullscreen();
+    }
+}
 
+function exitFullScreen()
+{
+    if(document.exitFullscreen)
+    {
+        document.exitFullscreen();
+    }
+    else if(document.mozCancelFullScreen)
+    {
+        document.mozCancelFullScreen();
+    }
+    else if(document.webkitExitFullscreen)
+    {
+        document.webkitExitFullscreen();
+    }
+}
+
+// This shouldn't be a problem... but just in case.
+function isFullScreen()
+{
+    var fullScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
+    if(fullScreenEnabled)
+    {
+        return "Already in Full Screen Mode!";
+    }
 }
 
 /*
