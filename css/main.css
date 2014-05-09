@@ -1,12 +1,6 @@
 html
 {
 	overflow: hidden;
-}
-
-html, body
-{
-	padding: 0px;
-	margin: 0px;
 	height: 100%;
 }
 
@@ -20,6 +14,9 @@ body
 	padding-top: 20px;
 	min-width: 800px;
 	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
 }
 
 section
@@ -35,10 +32,9 @@ h1
 	font-size: 38px;
 }
 
-section :not(h1)
+#editor
 {
-	padding-bottom: 50px;
-	line-height: 1.30em;
+	line-height: 1.3em;
 	min-height: 90%;
 	font-size: 22px;
 }

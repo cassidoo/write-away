@@ -7,14 +7,20 @@
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='css/main.css' rel='stylesheet' type='text/css'>
         
+        <script src="jquery.js"></script>
         <script src="js/ui.js"></script>
+        
     </head>
     <body class="normal">
     	
-        <button onclick="enterFullScreen(document.documentElement)">askjdhkasjdh</button> <!--Magical tester button-->
-        <section contenteditable="true">
-        	<h1>Wow</h1>
-        	<p>You can use <b>bold,</b> <i>italics,</i> <b><i>both,</i></b> and <a href="http://cassidoo.co">links</a> just by highlighting the text and selecting them from the options box.</p>
+        <button onclick="enterFullScreen(document.documentElement)">full screen</button> <!--Magical tester button-->
+        <button onclick="toggleColors()">colors</button> <!--Magical tester button-->
+		<div id="wordcount"></div>
+        <section>
+        	<h1 contenteditable="true">Document Title</h1>
+        	<div contenteditable="true" id="editor">
+				<p>You can use <b>bold,</b> <i>italics,</i> <b><i>both,</i></b> and <a href="http://cassidoo.co">links</a> just by highlighting the text and selecting them from the options box.</p>
+        	</div>
         </section>
     </body>
 </html>

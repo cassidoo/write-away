@@ -116,5 +116,9 @@ function isFullScreen()
 
 function wordCount()
 {
-
+    $("#editor").on('input', function()
+    {
+        var char = $('#editor').text().length;
+        $("#wordcount").html("you've typed " + char + " things.");
+    });
 }
