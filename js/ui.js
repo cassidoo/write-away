@@ -29,6 +29,43 @@ function editDialog()
 
 }
 
+// Checks if there's a selection in the document
+function hasSelection()
+{
+    var selection = window.getSelection();
+
+    // changed editing area to <article> so it's easily distinguishable
+    if(selection.isCollapsed === false && hasMatchingNode(parentNodes(selection.focusNode), 'article'))
+    {
+        // now that we have a selection, we have to add the editing box
+    }
+}
+
+function parentNodes(element)
+{
+    var nodeNames = [];
+
+    while(element.parentNode)
+    {
+        nodeNames.push(element.nodeName);
+        element = element.parentNode;
+    }
+
+    return nodeNames;
+}
+
+function hasMatchingNode(nodeNames, name)
+{
+    for(var i = 0; i < nodeNames.length; i++)
+    {
+        if(nodeNames[i] === name)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 function formatText(type)
 {
 
@@ -106,12 +143,12 @@ function isFullScreen()
     var fullScreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled;
     if(fullScreenEnabled)
     {
-        return "Already in Full Screen Mode!";
+        console.log("Already in Full Screen Mode!");
     }
 }
 
 /*
- Word count stuff
+ Word count stuff... keep jQuery?
  */
 
 function wordCount()
