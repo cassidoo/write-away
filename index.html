@@ -7,7 +7,7 @@
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='css/main.css' rel='stylesheet' type='text/css'>
         
-        <script src="jquery.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="js/ui.js"></script>
         
     </head>
@@ -16,6 +16,16 @@
         <button onclick="enterFullScreen(document.documentElement)">full screen</button> <!--Magical tester button-->
         <button onclick="toggleColors()">colors</button> <!--Magical tester button-->
 		<div id="wordcount"></div>
+		<section>
+			<h1>Welcome to Write Away.</h1>
+			<p>The simplest, effective text editor online.  Or at least, one of them.</p>
+			<h2>How many words do you want to write, and for how long?</h2>
+			<form onsubmit="init()">
+				<input type="number" placeholder="Number of words" min="10" />
+				<input type="number" placeholder="Number of minutes" min="1" />
+				<input type="submit" />
+			</form>
+		</section>
         <section>
         	<h1 contenteditable="true">Document Title</h1>
         	<article contenteditable="true" id="editor">

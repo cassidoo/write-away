@@ -26,6 +26,15 @@ section
 	margin: auto;
 }
 
+/* Styling all the text-like inputs (text, email, number, etc.) */
+input:not([type=submit]):not([type=file])
+{
+	border: 5px solid #111;
+	font-family: 'Droid Serif', 'Georgia', serif; 
+	font-size: 22px;
+	padding: 15px;
+}
+
 h1
 {
 	font-weight: bold;
@@ -42,6 +51,7 @@ a
 	line-height: 1.3em;
 	min-height: 90%;
 	font-size: 22px;
+	outline: none;
 }
 
 .normal
