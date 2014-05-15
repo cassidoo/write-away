@@ -15,16 +15,17 @@
     	
         <button onclick="enterFullScreen(document.documentElement)">full screen</button> <!--Magical tester button-->
         <button onclick="toggleColors()">colors</button> <!--Magical tester button-->
-		<div id="wordcount"></div>
-		<section>
+		<div id="wordcount"> </div>
+		<div id="timer"> </div>
+		<section class="intro">
 			<h1>Welcome to Write Away.</h1>
 			<p>The simplest, effective text editor online.  Or at least, one of them.</p>
 			<h2>How many words do you want to write, and for how long?</h2>
-			<form onsubmit="init()">
-				<input type="number" placeholder="Number of words" min="10" />
-				<input type="number" placeholder="Number of minutes" min="1" />
-				<input type="submit" />
-			</form>
+			<div class="form">
+				<input type="number" placeholder="# words" min="10" id="wordsnum" />
+				<input type="number" placeholder="# minutes" min="1" id="minsnum" />
+				<input type="button" value="Start" onclick="init()" />
+			</div>
 		</section>
         <section>
         	<h1 contenteditable="true">Document Title</h1>

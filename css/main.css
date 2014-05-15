@@ -26,13 +26,30 @@ section
 	margin: auto;
 }
 
-/* Styling all the text-like inputs (text, email, number, etc.) */
+.intro
+{
+	
+}
+
+.form
+{
+	
+}
+
+/* Styling all the text-like inputs (text, email, number, etc.) plus buttons */
 input:not([type=submit]):not([type=file])
 {
 	border: 5px solid #111;
 	font-family: 'Droid Serif', 'Georgia', serif; 
 	font-size: 22px;
 	padding: 15px;
+	text-align: center;
+	width: 28%;
+}
+
+.inverse input:not([type=submit]):not([type=file])
+{
+	border: 5px solid #fafafa;
 }
 
 h1
