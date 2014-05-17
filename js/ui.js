@@ -5,6 +5,8 @@ console.log("Fiddling under the hood, eh buddy? We've probably got a lot in comm
 
 function init()
 {
+    document.getElementById("intro").style.display = "none";
+    
     var minsnum = document.getElementById("minsnum").value;
     
     if(minsnum <= 0)
@@ -39,14 +41,8 @@ function Countdown(options)
     var timer;
     var instance = this;
     var seconds = options.seconds || 10;
-    var updateStatus = options.onUpdateStatus ||
-    function()
-    {
-    };
-    var counterEnd = options.onCounterEnd ||
-    function()
-    {
-    };
+    var updateStatus = options.onUpdateStatus || function(){};
+    var counterEnd = options.onCounterEnd || function(){};
 
     function decrementCounter()
     {
@@ -72,6 +68,11 @@ function Countdown(options)
     {
         clearInterval(timer);
     };
+}
+
+function WordCount(options)
+{
+    
 }
 
 function toggleColors()
@@ -213,17 +214,4 @@ function isFullScreen()
     {
         console.log("Already in Full Screen Mode!");
     }
-}
-
-/*
- Word count stuff... keep jQuery?
- */
-
-function wordCount()
-{
-    $("#editor").on('input', function()
-    {
-        var char = $('#editor').text().length;
-        $("#wordcount").html("you've typed " + char + " things.");
-    });
 }
