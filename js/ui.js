@@ -6,9 +6,9 @@ console.log("Fiddling under the hood, eh buddy? We've probably got a lot in comm
 function init()
 {
     document.getElementById("intro").style.display = "none";
-    
+
     var minsnum = document.getElementById("minsnum").value;
-    
+
     if(minsnum <= 0)
     {
         console.log("Psh gurl whatchu doin");
@@ -34,15 +34,50 @@ function init()
     });
 
     countdown.start();
+
+    var node = document.getElementById("editor");
+
+    addEvent(node, 'keypress', function(e)
+    {
+        wordcount();
+    });
+
 }
+
+// got this function at codebits.glennjones.net
+function addEvent(obj, type, fn)
+{
+    if(obj)
+    {
+        if(obj.attachEvent)
+        {
+            obj['e' + type + fn] = fn;
+            obj[type + fn] = function()
+            {
+                obj['e' + type + fn](window.event);
+            };
+            obj.attachEvent('on' + type, obj[type + fn]);
+        }
+        else
+        {
+            obj.addEventListener(type, fn, false);
+        }
+    }
+};
 
 function Countdown(options)
 {
     var timer;
     var instance = this;
     var seconds = options.seconds || 10;
-    var updateStatus = options.onUpdateStatus || function(){};
-    var counterEnd = options.onCounterEnd || function(){};
+    var updateStatus = options.onUpdateStatus ||
+    function()
+    {
+    };
+    var counterEnd = options.onCounterEnd ||
+    function()
+    {
+    };
 
     function decrementCounter()
     {
@@ -70,9 +105,14 @@ function Countdown(options)
     };
 }
 
-function WordCount(options)
+function wordcount()
 {
-    
+    s = document.getElementById("editor").innerText;
+    s = s.replace(/(^\s*)|(\s*$)/gi, "");
+    s = s.replace(/[ ]{2,}/gi, " ");
+    s = s.replace(/\n /, "\n");
+
+    document.getElementById("wordcount").innerText = s.split(' ').length;
 }
 
 function toggleColors()
